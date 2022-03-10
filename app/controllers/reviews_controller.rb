@@ -1,12 +1,16 @@
 class ReviewsController < ApplicationController
-  
+
+  def index
+    review = Review.find_by current_user.reviews
+    render json review
+  end
 
 
 
   def create
     review = Review.new(
       user_id: params[:current_user],
-      teacher_id: params[:teacher_id],
+      teacher_id: params[:teacher_id], ### can I do current_teacher?
       rating: params[:rating],
       body: params[:body]
     )

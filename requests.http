@@ -1,14 +1,3 @@
-### Users create (signup)
-POST http://localhost:3000/users
-Content-Type: application/json
-
-{
-  "name": "Fred Mcguffin",
-  "email": "Fred@gmail.com",
-  "password": "password",
-  "password_confirmation": "password"
-}
-
 ### Sessions create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
@@ -17,3 +6,71 @@ Content-Type: application/json
   "email": "Fred@gmail.com",
   "password": "password"
 }
+
+### Users index
+GET http://localhost:3000/users
+Content-Type: application/json
+
+
+### Users show
+GET http://localhost:3000/users/1
+Content-Type: application/json
+
+
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Fred Mcguffin",
+  "email": "Fred@gmail.com",
+  "password": "password",
+  "is_teacher": "true",
+  "education": "High educateted all over the world",
+  "bio": "Hail from normandy and steeped in the arts",
+  "subjects": "History, Digital Art Design",
+  "zipcode": "10023",
+  "preferred_contact": "By phone(text) or email",
+  "image_url": "image"
+}
+
+### Users update
+PATCH http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "",
+  "password": "",
+  "education": "",
+  "bio": "",
+  "subjects": "",
+  "zipcode": "",
+  "preferred_contact": ""
+}
+
+### Users delete
+DELETE http://localhost:3000/users/1
+Content-Type: application/json
+
+### Review index
+GET http://localhost:3000/reviews
+
+### Review create
+POST http://localhost:3000/reviews
+Content-Type: application/json
+{
+  "teacher_id": "",
+  "rating": "",
+  "body": ""
+}
+
+### Review update
+PATCH http://localhost:3000/reviews/#{review.id}
+{
+  "rating": "",
+  "body": ""
+}
+### Review delete
+DELETE http://localhost:3000/reviews/1
