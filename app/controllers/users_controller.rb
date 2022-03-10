@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     teachers = User.find_by is_teacher: true
     teacher = teachers.find_by(id: id)
     render json: teacher
-  end ## ??????
+  end ## does this work?
   
 
   def create
