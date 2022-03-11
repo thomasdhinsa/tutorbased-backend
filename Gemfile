@@ -48,3 +48,4 @@ end
 
 gem "active_model_serializers"
 gem "jwt"
+gem "seed_dump"

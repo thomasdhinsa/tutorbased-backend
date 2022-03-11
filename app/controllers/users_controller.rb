@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: [:show, :update, :delete]
 
   def index
     teachers = User.find_by is_teacher: true
@@ -31,21 +32,21 @@ class UsersController < ApplicationController
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
+  end
 
     def update
-      teacher = User.find_by is_teacher: true 
       user = User.find(params[:id])
-        user.name: params[:name],
-        user.email: params[:email],
-        user.password: params[:password],
-        is_teacher: params[:is_teacher],
-        teacher.education: params[:education],
-        teacher.bio: params[:bio],
-        teacher.subjects: params[:subjects],
-        teacher.zipcode: params[:zipcode],
-        teacher.preferred_contact: params[:preferred_contact],
-        user.image_url: params[:image_url]
-      )
+        user.name = params[:name],
+        user.email = params[:email],
+        user.password = params[:password],
+        user.is_teacher = params[:is_teacher],
+        # if current_user.is_teacher(params[true])
+        user.education = params[:education],
+        user.bio = params[:bio],
+        user.subjects = params[:subjects],
+        user.zipcode = params[:zipcode],
+        user.preferred_contact = params[:preferred_contact],
+        user.image_url = params[:image_url]
     end
 
     def destroy
@@ -53,20 +54,4 @@ class UsersController < ApplicationController
       user.delete
       render json: "Your account is deleted. Have a great day!"
     end
-
-
-
-
-
-
-  end
-
-
-
-
-
-
-
-
-  
 end

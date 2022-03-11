@@ -1,9 +1,11 @@
+@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDcxMTg4MTB9.OrmCQuG1ZbPcUfjjSXJ4Sy4vbnAdmQYNQ390Bmycyls"
+
 ### Sessions create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "Fred@gmail.com",
+  "email": "Tom@gmail.com",
   "password": "password"
 }
 
@@ -23,16 +25,16 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Fred Mcguffin",
-  "email": "Fred@gmail.com",
+  "name": "Silvia Peppermill",
+  "email": "Silvia@gmail.com",
   "password": "password",
-  "is_teacher": "true",
-  "education": "High educateted all over the world",
-  "bio": "Hail from normandy and steeped in the arts",
-  "subjects": "History, Digital Art Design",
-  "zipcode": "10023",
-  "preferred_contact": "By phone(text) or email",
-  "image_url": "image"
+  "is_teacher": true ,
+  "education": "All Schools attended",
+  "bio": "Having travelled all throughout europe and asia after college, horizons are bright",
+  "subjects": "Biology,Chemistry",
+  "zipcode": "23185",
+  "preferred_contact": "phone or email",
+  "image_url": "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
 }
 
 ### Users update
@@ -60,10 +62,12 @@ GET http://localhost:3000/reviews
 ### Review create
 POST http://localhost:3000/reviews
 Content-Type: application/json
+Authorization: {{ jwt }}
+
 {
-  "teacher_id": "",
-  "rating": "",
-  "body": ""
+  "teacher_id": "8",
+  "rating": "3.5",
+  "body": "This teacher, while brilliant; doesn't seem to know how to connect with students. I've learned a lot but her style isn't for everyone"
 }
 
 ### Review update
