@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:show, :update, :delete]
+  before_action :authenticate_user, only: [:update, :destroy]
+  
 
   def index
-    teachers = User.find_by is_teacher: true
+    teachers = User.where is_teacher: true
     render json: teachers
   end
 
   def show
     id = params[:id].to_i
-    teachers = User.find_by is_teacher: true
-    teacher = teachers.find_by(id: id)
+    teacher = User.find_by is_teacher: true, id: id
     render json: teacher
-  end ## does this work?
+  end 
   
 
   def create
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
+      password_confirmation: params[:password_confirmation],
       is_teacher: params[:is_teacher],
       education: params[:education],
       bio: params[:bio],
@@ -36,17 +37,20 @@ class UsersController < ApplicationController
 
     def update
       user = User.find(params[:id])
-        user.name = params[:name],
-        user.email = params[:email],
-        user.password = params[:password],
-        user.is_teacher = params[:is_teacher],
-        # if current_user.is_teacher(params[true])
-        user.education = params[:education],
-        user.bio = params[:bio],
-        user.subjects = params[:subjects],
-        user.zipcode = params[:zipcode],
-        user.preferred_contact = params[:preferred_contact],
-        user.image_url = params[:image_url]
+        user.name = params[:name] || user.name
+        user.email = params[:email] || user.email
+        # user.is_teacher = params[:is_teacher] 
+        user.education = params[:education] || user.education
+        user.bio = params[:bio] || user.bio
+        user.subjects = params[:subjects] || user.subjects
+        user.zipcode = params[:zipcode] || user.zipcode
+        user.preferred_contact = params[:preferred_contact] || user.preferred_contact
+        user.image_url = params[:image_url] || user.image_url
+        if user.save 
+          render json: { message: "User updated successfully" }, status: :accepted
+        else 
+          render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+        end 
     end
 
     def destroy

@@ -1,50 +1,44 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user, except: [:index]
+  before_action :authenticate_user
 
-  def index
-    review = Review.find_by current_user.reviews
-    render json review
-  end
+  # def index
+  #   review = Review.find_by current_user.reviews
+  #   render json review
+  # end
 
   def create
-   if current_user.is_teacher == false 
     review = Review.new(
-      user_id: params[:current_user],
-      teacher_id: params[:teacher_id], ### can I do current_teacher?
+      user_id: current_user.id,
+      teacher_id: params[:teacher_id], 
       rating: params[:rating],
       body: params[:body]
     )
-      if review.save
-        render json: review
-      else
-        render json: {errors: review.error.full_messages}, status: :unprocessable_entity
+    if review.save
+      render json: review
+    else
+      render json: {errors: review.errors.full_messages}, status: :unprocessable_entity
     end 
-  else 
-    render json: {}, status: :unauthorized 
   end
 
-  def update 
-    user = User.find_by is_teacher: false 
-    review = Review.find_by.current_user.reviews
+  def update
+    review = current_user.reviews.find params[:id]
     review.rating = params[:rating] || review.rating
     review.body = params[:body] || review.body
-    if user.is_teacher == false
-      review.save
+    if review.save
       render json: review
     else 
-      render json: {message: "You're a Teacher."}
+      render json: {errors: review.errors.full_messages}, status: :unprocessable_entity
+    end
+  end 
+
+  def destroy
+    review = current_user.reviews.find params[:id]
+    review.destroy
+    render json: {message: "Your Review is Deleted"}
   end
 
-  def delete
-    review = Review.find_by.current_user
-    if review.delete
-      render json: {message: "Your Review is Deleted"}
-    else 
-      render json: {errors: review.error.full_messages}, status: :unauthorized
-    end 
-  end
-end 
-end 
 
 
 end 
+
+
