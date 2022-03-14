@@ -1,4 +1,4 @@
-@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDcxMTg4MTB9.OrmCQuG1ZbPcUfjjSXJ4Sy4vbnAdmQYNQ390Bmycyls"
+@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDczNTg2Nzd9.6UCbn5_uzbtOtObnqH5GgLW0gqauEwmnZhIymuFT47s"
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions
@@ -25,15 +25,15 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Silvia Peppermill",
-  "email": "Silvia@gmail.com",
+  "name": "Fred McGuffin",
+  "email": "Fred@gmail.com",
   "password": "password",
   "is_teacher": true ,
-  "education": "All Schools attended",
-  "bio": "Having travelled all throughout europe and asia after college, horizons are bright",
-  "subjects": "Biology,Chemistry",
-  "zipcode": "23185",
-  "preferred_contact": "phone or email",
+  "education": "Highly educated",
+  "bio": "Peace core work in africa",
+  "subjects": "Physics, Metaphysics",
+  "zipcode": "90028",
+  "preferred_contact": "email please",
   "image_url": "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
 }
 

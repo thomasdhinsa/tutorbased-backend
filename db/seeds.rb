@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+User.create!([
+  {password_digest: "$2a$12$Ef7lybzs93Q3MWv1o.LRU.oyM0R.29e5rg8gE0m2cilfopiuaeK8y", is_teacher: false, name: "Tom Reviewer", education: "", bio: "", subjects: "", zipcode: "", preferred_contact: "", image_url: "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", email: "Tom@gmail.com"},
+  {password_digest: "$2a$12$n7B896uDqHpeSVdU3JgqNOYfWGrFJRtDry6JSBX3ZWwtrlaRgRTNu", is_teacher: false, name: "Jeff Reviewer", education: "", bio: "", subjects: "", zipcode: "", preferred_contact: "", image_url: "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", email: "Jeff@gmail.com"},
+  {password_digest: "$2a$12$Bsu3Hvaz16I3I8lIJiWFJuTM4JqRDzGtvZb/W021pJfupjeNpX/f2", is_teacher: false, name: "Paul Reviewer", education: "", bio: "", subjects: "", zipcode: "", preferred_contact: "", image_url: "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", email: "Paul@gmail.com"},
+  {password_digest: "$2a$12$UA4evG8XatWGz/WLOvmyYexd4rVsXZXLOMdlmP4UTpBsZ/LYPjnhu", is_teacher: true, name: "Mary Teach", education: "Many years of study across the U.S.", bio: "Excellent character, person of substance", subjects: "Math, English", zipcode: "11516", preferred_contact: "phone", image_url: "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", email: "Mary@gmail.com"},
+  {password_digest: "$2a$12$PSPTRZ5LNn/bRpURG3o..eYIFXVePMWc3aaladcg7/ox1mzZ/HHIO", is_teacher: true, name: "Silvia Peppermill", education: "All Schools attended", bio: "Having travelled all throughout europe and asia after college, horizons are bright", subjects: "Biology,Chemistry", zipcode: "23185", preferred_contact: "phone or email", image_url: "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", email: "Silvia@gmail.com"},
+  {password_digest: "$2a$12$cybzSUyzgFG1OH/v7SAMQuwXsXe1oc8LVJhxl8KHi9IxUIhQKfjYO", is_teacher: true, name: "Fred McGuffin", education: "Highly educated", bio: "Peace core work in africa", subjects: "Physics, Metaphysics", zipcode: "90028", preferred_contact: "email please", image_url: "https://i5.walmartimages.com/asr/3fa28e82-d16a-4476-884d-5f1d13ac04f2.1b553e9968ac5a5835cad6f41704bb67.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", email: "Fred@gmail.com"}
+])
