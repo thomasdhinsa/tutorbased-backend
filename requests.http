@@ -4,7 +4,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "Fred@gmail.com",
+  "email": "Paul@gmail.com",
   "password": "password"
 }
 
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 
 ### Users(teacher) show
-GET http://localhost:3000/users/7
+GET http://localhost:3000/users/6
 Content-Type: application/json
 
 

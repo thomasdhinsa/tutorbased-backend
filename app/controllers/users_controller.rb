@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     id = params[:id].to_i
-    teacher = User.find_by is_teacher: true, id: id
+    teacher = User.find_by id: id
     render json: teacher
   end 
   
@@ -39,7 +39,6 @@ class UsersController < ApplicationController
       user = User.find(params[:id])
         user.name = params[:name] || user.name
         user.email = params[:email] || user.email
-        # user.is_teacher = params[:is_teacher] 
         user.education = params[:education] || user.education
         user.bio = params[:bio] || user.bio
         user.subjects = params[:subjects] || user.subjects
