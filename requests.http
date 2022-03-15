@@ -1,11 +1,10 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDczOTYzMDN9.fDdg7bdRg1KcD3pitwZkDVfV-N8Js8vJ4bpapOkXSOc
-
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE2NDc0NTIzNDd9.ePa5gK0Uy_hfnR5UeoD9usbGW33nkcjXZH6MhiRi30c
 ### Sessions create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "Paul@gmail.com",
+  "email": "Fred@gmail.com",
   "password": "password"
 }
 
@@ -39,17 +38,12 @@ Content-Type: application/json
 }
 
 ### Users update
-PATCH http://localhost:3000/users/9
+PATCH http://localhost:3000/users/6
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Fred Mcguffin",
-  "education": "Extremely Vastly Educated",
-  "bio": "Hail from normandy and steeped in the arts",
-  "subjects": "History, Digital Art Design",
-  "zipcode": "90028",
-  "preferred_contact": "email or phone"
+  "name":" Paul Bjorg"
 }
 
 ### Users destroy
@@ -72,13 +66,13 @@ Authorization: Bearer {{ jwt }}
 }
 
 ### Review update
-PATCH http://localhost:3000/reviews/1
+PATCH http://localhost:3000/reviews/13
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
   "rating": 4,
-  "body": "This teacher was actually quite excellent. I was in my feelings"
+  "body": "It seems everyone else that has left a review has the same thoughts. Mrs. Peter's bright personality combined with her knowledge and snappy response set her above the rest."
 }
 
 ### Review delete
