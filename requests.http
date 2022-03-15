@@ -1,11 +1,11 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDczNzQzMjV9.1VYFDQpmU6J0sv5DJLfvazwUYH_psx_tC5uzmxpMBDM
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDczOTYzMDN9.fDdg7bdRg1KcD3pitwZkDVfV-N8Js8vJ4bpapOkXSOc
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "Tom@gmail.com",
+  "email": "Paul@gmail.com",
   "password": "password"
 }
 
@@ -25,12 +25,12 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Summer Dhinsa",
+  "name": "Summer Peter",
   "email": "Summer@gmail.com",
   "password": "password",
   "password_confirmation": "password",
   "is_teacher": true ,
-  "education": "Greatly educated",
+  "education": "1998 - 2002 Columbia University Bachelors in Teaching, 2002 - 2006 Columbia University MBA",
   "bio": "Peace core work in belize",
   "subjects": "Geo-Politics, Finance",
   "zipcode": "11222",
@@ -66,9 +66,9 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "teacher_id": 9,
-  "rating": 2,
-  "body": "Fred was a gentle person but my learning style was incompatible with his. I wouldn't have bothered to write a review if he tried to meet me halfway but he didn't budge. I can understand being old school but gosh, it's 2022"
+  "teacher_id": 11,
+  "rating": 4,
+  "body": "Summer is great. Her bright personality combined with her knowledge and snappy response set her above the rest."
 }
 
 ### Review update
